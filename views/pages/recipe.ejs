@@ -1,0 +1,28 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <div class="name-and-protein">
+        <h2>
+            <%= recipe.name %>
+        </h2>
+        <h3>
+            Main protein: <%= recipe.protein %>
+        </h3>
+    </div>
+    <div class="ingredient-box">
+        <h3>Ingredients:</h3>
+        <ul class="ingredients">
+            <% recipe.ingredients.forEach((ingredient) => { %>
+                <li>
+                    <%= ingredient.name %>, <%= ingredient.amount %>
+                    <div class="popup" id="popup<%=ingredient.id%>">
+                        <h3><%= ingredient.name %></h3>
+                        <p><%= ingredient.description %></p>
+                    </div>
+                </li>
+            <% }) %>
+        </ul>
+    </div>
+
+</body>

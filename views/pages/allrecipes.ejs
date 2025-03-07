@@ -1,0 +1,68 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+    <div class="recipe-category">
+        <h2>Recipes with Chicken</h2>
+        <div class="recipes-box">
+            <ul class="recipes-list">
+                <% chickenrecipes.forEach((recipe) => { %>
+                    <li>
+                        <a href="/recipe/<%= recipe.recipe_id %>"><h2>
+                            <%= recipe.name %>
+                        </h2></a>
+                        <ul class="ingredients">
+                            <% recipe.ingredients.forEach((ingredient) => { %>
+                                <li>
+                                    <%= ingredient.name %>, <%= ingredient.amount %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                <% }) %>
+            </ul>
+        </div> 
+    </div>
+    <div class="recipe-category">
+        <h2>Recipes with Beef</h2>
+        <div class="recipes-box">
+            <ul class="recipes-list">
+                <% beefrecipes.forEach((recipe) => { %>
+                    <li>
+                        <a href="/recipe/<%= recipe.recipe_id %>"><h2>
+                            <%= recipe.name %>
+                        </h2></a>
+                        <ul class="ingredients">
+                            <% recipe.ingredients.forEach((ingredient) => { %>
+                                <li>
+                                    <%= ingredient.name %>, <%= ingredient.amount %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>       
+    </div>
+    <div class="recipe-category">
+        <h2>Recipes with Fish</h2>
+        <div class="recipes-box">
+            <ul class="recipes-list">
+                <% fishrecipes.forEach((recipe) => { %>
+                    <li>
+                        <a href="/recipe/<%= recipe.recipe_id %>"><h2>
+                            <%= recipe.name %>
+                        </h2></a>
+                        <ul class="ingredients">
+                            <% recipe.ingredients.forEach((ingredient) => { %>
+                                <li>
+                                    <%= ingredient.name %>, <%= ingredient.amount %>
+                                </li>
+                            <% }) %>
+                        </ul>
+                    </li>
+                <% }) %>
+            </ul>
+        </div>  
+    </div>
+</body>

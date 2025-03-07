@@ -1,0 +1,133 @@
+body {
+  padding: 0;
+  margin:0;
+  font: 16px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+header{
+  background-color: #373F51;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header a{
+  text-decoration: none;
+  color:white;
+}
+
+header h1{
+  padding-left: 50px;
+}
+
+header ul{
+  list-style:none;
+  display: flex;
+  flex-direction: row;
+  padding-right: 50px;
+}
+
+header li{
+  margin: 0 10px;
+}
+
+.current-page{
+  text-decoration: underline;
+}
+
+.recipe-category{
+  margin: 25px 50px;
+  background-color: #D8DBE2;
+  color: black;
+  padding: 10px;
+}
+
+.recipe-category a{
+  color: black;
+}
+
+.recipes-list h2{
+  font-size: 1.2rem;
+}
+
+.recipes-list {
+  list-style: none;
+}
+
+.recipes-list li{
+  color: black;
+  background-color: #A9BCD0;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+
+.name-and-protein{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #D8DBE2;
+  margin: 50px;
+  margin-bottom: 20px;
+}
+
+.ingredient-box{
+  background-color: #A9BCD0;
+  margin: 20px 50px;
+  padding: 20px 50px;
+}
+
+.ingredients li{
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 15px;
+  width: fit-content;
+}
+
+.popup{
+  visibility: hidden;
+  position: absolute;
+  background-color: white;
+  padding: 20px 50px;
+  border: 2px solid #DAA49A;
+  width: fit-content;
+}
+
+.popup h3{
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.ingredients li:hover .popup{
+  visibility: visible;
+}
+
+.form-container{
+  background-color: #D8DBE2;
+  padding: 20px;
+  margin: 50px;
+}
+
+.form-container h2{
+  margin-top:0;
+}
+
+button{
+  margin-top: 10px;
+}
+
+.about{
+  margin: 50px;
+  padding: 20px 50px;
+  background-color: #A9BCD0;
+}
+
+.about p{
+  background-color: white;
+  margin: 0;
+  padding: 20px 20px;
+  font-size: 1.2rem;
+}

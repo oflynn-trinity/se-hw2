@@ -1,0 +1,54 @@
+<%- include('../partials/head') %>
+
+<body>
+    <%- include('../partials/header') %>
+
+<div class="form-container">
+    <h2>Add a New Recipe</h2>
+
+    <form action="/enterrecipe" method="post">
+    <label for="name">Recipe Name:</label>
+    <input type="text" id="name" name="recipe_name" required>
+
+    <label for="protein">Protein Type:</label>
+    <select id="protein" name="protein_id" required>
+        <option value="" disabled selected>Select protein</option>
+        <option value="1">Chicken</option>
+        <option value="3">Beef</option>
+        <option value="2">Fish</option>
+    </select>
+
+    <h3>Other Ingredients:</h3>
+    <div id="ingredients">
+        <div>
+        <select name="ingredient_id[]" required>
+            <option value="" disabled selected>Select ingredient</option>
+            <% ingredients.forEach(ingredient => { %>
+            <option value="<%= ingredient.ingredient_id %>"><%= ingredient.ingredient_name %></option>
+            <% }) %>
+        </select>
+        <input type="text" name="amount[]" placeholder="Amount (e.g., 1 cup)" required>
+        </div>
+    </div>
+
+    <button type="button" onclick="addIngredient()">Add Another Ingredient</button>
+    <button type="submit">Submit Recipe</button>
+    </form>
+</div>
+<script>
+  function addIngredient() {
+    let div = document.createElement("div");
+    div.innerHTML = `
+      <select name="ingredient_id[]" required>
+        <option value="" disabled selected>Select ingredient</option>
+        <% ingredients.forEach(ingredient => { %>
+          <option value="<%= ingredient.ingredient_id %>"><%= ingredient.ingredient_name %></option>
+        <% }) %>
+      </select>
+      <input type="text" name="amount[]" placeholder="Amount (e.g., 1 cup)" required>
+    `;
+    document.getElementById("ingredients").appendChild(div);
+  }
+</script>
+
+</body>
